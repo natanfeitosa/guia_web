@@ -67,3 +67,39 @@ Você pode colocar elementos dentro de outros elementos também — isso é cham
 Você precisa, no entanto, certificar-se de que seus elementos estejam adequadamente aninhados. No exemplo acima, abrimos primeiro o elemento ```<p>```, depois o elemento ```<strong>```; portanto, temos que fechar primeiro o elemento ```<strong>```, depois o elemento ```<p>```. Se fizermos como abaixo, estaremos cometendo um erro, e nosso HTML pode não ser renderizado:
 
 > ```<p>Meu gatinho é <strong>muito mal humorado.</p></strong>```
+
+### Elemento vazos
+
+Alguns elementos não possuem conteúdo e são chamados de elementos vazios, exemplo o elemento ```<img>``` que temos na nossa página HTML:
+
+> ```<img src="imagens/imagem.png" alt="Minha imagem de teste">```
+
+Como pode ser visto, ele possui dois atributos, mas não há tag ```</img>``` de fechamento, e não há conteúdo interno. Isso acontece porque um elemento de imagem não envolve conteúdo para ter efeito em si mesmo. Sua proposta é incorporar uma imagem na página HTML no lugar que o código aparece.
+
+### Anatomia de um documento HTML
+
+Isso resume o básico dos elementos HTML individuais, mas eles na maioria das vezes não são úteis por si só. Agora vamos ver como elementos individuais são combinados para formar uma página HTML inteira. Vamos ver um exemplo de documento ```html``` que o chamaremos de ```index.html```.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Minha página de teste</title>
+  </head>
+  <body>
+    <img src="imagens/imagem.png" alt="Minha imagem de teste">
+  </body>
+</html>
+```
+
+Aqui nós temos:
+
+- ```<!DOCTYPE html>``` — o doctype. É a parte inicial obrigatória do documento. Nas névoas do tempo, quando o HTML era novo (por volta de 1991/2), doctypes eram criados para agir como links para um conjunto de regras que a página HTML tinha que seguir para ser considerada um bom HTML, o que poderia significar checagem automática de erros e outras coisas úteis. No entanto, atualmente, eles não fazem muito sentido e são basicamente necessários apenas para garantir que o documento se comporte corretamente. Isso é tudo que você precisa saber agora.
+- ```<html></html>``` — o elemento ```<html>``` envolve todo o conteúdo da página e às vezes é conhecido como o elemento raiz.
+- ```<head></head>``` — o elemento ```<head>``` age como um recipiente de tudo o que você deseja incluir em uma página HTML que não é o conteúdo que você quer mostrar para quem vê sua página. Isso inclui coisas como palavras-chave e uma descrição que você quer que apareça nos resultados de busca, ```CSS``` para dar estilo ao conteúdo, declarações de conjuntos de caracteres e etc.
+- ```<meta charset="utf-8">``` — esse elemento define o conjunto de caracteres que seu documento deve usar, no nosso exemplo e na maioria dos casos, ```UTF-8```, que inclui praticamente todos os caracteres da grande maioria dos idiomas escritos. Essencialmente, agora ele pode manipular qualquer conteúdo textual que você possa colocar. Não há razão para não definir isso e assim pode ajudar a evitar alguns problemas no futuro.
+- ```<title></title>``` — o elemento ```<title>``` define o título da sua página, que é o título que aparece na guia do navegador onde sua página é carregada. Ele também é usado para descrever a página quando você a adiciona aos favoritos.
+- ```<body></body>``` — o elemento ```<body>``` contém todo o conteúdo que você quer mostrar ao público que visita sua página, seja texto, imagens, vídeos, jogos, faixas de áudio reproduzíveis ou qualquer outra coisa.
+
+> **Nota:** Tudo que você for colocar para exibir agora ou futuramente, provavelmente vais colocar no ```<body>```
